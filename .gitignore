@@ -1,0 +1,9 @@
+# Exclude Angular Distribution
+**/dist/*
+
+# Exclude node_modules
+node_modules
+
+# Exclude IDEA files
+**/.idea/*
+*.iml
