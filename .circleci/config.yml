@@ -27,6 +27,8 @@ jobs:
 
     - run: npm install
 
+    - run: npm run build:ssr
+
     - save_cache:
         paths:
         - node_modules
