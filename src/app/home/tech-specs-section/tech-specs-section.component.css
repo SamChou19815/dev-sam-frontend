@@ -14,9 +14,21 @@
   grid-template-columns: 100%;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 700px) and (max-width: 960px) {
   .tech-specs-list-container {
+    display: grid;
+    grid-gap: 1em;
     grid-template-columns: 300px 300px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 960px) {
+  .tech-specs-list-container {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
   }
 }
 

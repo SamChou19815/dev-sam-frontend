@@ -17,6 +17,7 @@ import { ProjectsSectionComponent } from './home/projects-section/projects-secti
 import { TechSpecsSectionComponent } from './home/tech-specs-section/tech-specs-section.component';
 import { OpenSourceSectionComponent } from './home/open-source-section/open-source-section.component';
 import { OpenSourceCardComponent } from './home/open-source-section/open-source-card/open-source-card.component';
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { OpenSourceCardComponent } from './home/open-source-section/open-source-
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'dev-sam-frontend' }), NavModule, BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase), AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase), AngularFireAuthModule, NgxJsonLdModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AppRoutingModule,
     SharedModule

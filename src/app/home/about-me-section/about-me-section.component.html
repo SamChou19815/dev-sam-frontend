@@ -19,24 +19,28 @@
 </app-home-about-me-row>
 <div style="flex: 1 1;"></div>
 <app-home-about-me-row>
-  <a mat-stroked-button href="https://github.com/SamChou19815" target=_blank>
-    <fa name="github"></fa>
-    <span class="separator"></span>
-    <span class="separator"></span>
-    <span>GitHub</span>
-  </a>
-  <a mat-stroked-button href="https://blog.developersam.com" target=_blank>
-    <mat-icon>language</mat-icon>
-    <span class="separator"></span>
-    <span>Blog</span>
-  </a>
-  <a mat-stroked-button href="../../../assets/docs/Resume.pdf" target=_blank>
-    <mat-icon>account_box</mat-icon>
-    <span class="separator"></span>
-    <span>Resume</span>
-  </a>
+  <nav>
+    <a mat-stroked-button href="https://github.com/SamChou19815" target=_blank>
+      <fa name="github"></fa>
+      <span class="separator"></span>
+      <span class="separator"></span>
+      <span>GitHub</span>
+    </a>
+    <a mat-stroked-button href="https://blog.developersam.com" target=_blank>
+      <mat-icon>language</mat-icon>
+      <span class="separator"></span>
+      <span>Blog</span>
+    </a>
+    <a mat-stroked-button href="../../../assets/docs/Resume.pdf" target=_blank>
+      <mat-icon>account_box</mat-icon>
+      <span class="separator"></span>
+      <span>Resume</span>
+    </a>
+  </nav>
 </app-home-about-me-row>
 <app-home-about-me-row>
   <!--suppress HtmlUnknownAnchorTarget -->
-  <a (click)="scrollToProjects()" style="cursor: pointer;"><mat-icon>expand_more</mat-icon></a>
+  <a (click)="scrollToProjects()" style="cursor: pointer;">
+    <mat-icon>expand_more</mat-icon>
+  </a>
 </app-home-about-me-row>
