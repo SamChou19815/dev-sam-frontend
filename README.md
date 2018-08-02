@@ -1,5 +1,7 @@
 # Developer Sam Website Frontend
 
+![GitHub](https://img.shields.io/github/license/SamChou19815/dev-sam-frontend.svg)
+
 The code of my own website frontend that is open-sourced.
 
 This is the repository for the frontend of [my website](https://developersam.com), built by Angular 6. You can freely 
