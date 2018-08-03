@@ -5,6 +5,8 @@ import { LoadingOverlayService } from '../../shared/overlay/loading-overlay.serv
 import { shortDelay } from '../../shared/util';
 import { SchedulerDataService } from '../scheduler-data.service';
 import { SchedulerTaggedInterval } from '../scheduler-tagged-interval';
+import { ProjectCardData, schedulerCardData } from '../../shared/project-card-data';
+import { GoogleUserService } from '../../shared/google-user.service';
 
 @Component({
   selector: 'app-scheduler-auto-scheduling',
@@ -13,6 +15,16 @@ import { SchedulerTaggedInterval } from '../scheduler-tagged-interval';
 })
 export class AutoSchedulingComponent implements OnInit {
 
+  /**
+   * The intro for Scheduler.
+   * @type {ProjectCardData}
+   */
+  schedulerIntro: ProjectCardData = schedulerCardData;
+  /**
+   * Whether the user has logged in.
+   * @type {boolean}
+   */
+  isUserLoggedIn = false;
   /**
    * The selected friend.
    */
@@ -25,12 +37,18 @@ export class AutoSchedulingComponent implements OnInit {
 
   constructor(private schedulerDataService: SchedulerDataService,
               private friendsDataService: FriendsDataService,
+              private googleUserService: GoogleUserService,
               private loadingService: LoadingOverlayService) {
   }
 
   ngOnInit() {
     shortDelay(async () => {
       const ref = this.loadingService.open();
+      this.isUserLoggedIn = await this.googleUserService.isSignedInPromise();
+      if (!this.isUserLoggedIn) {
+        ref.close();
+        return;
+      }
       await Promise.all([
         this.schedulerDataService.initializePersonalAutoSchedule(),
         this.friendsDataService.initializedFriendsApp()

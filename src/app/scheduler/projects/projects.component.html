@@ -1,9 +1,12 @@
-<ng-container *ngIf="isInitialized">
-  <app-scheduler-project
-    *ngFor="let project of projects; let i = index"
-    [schedulerProject]="project"
-    (editClicked)="editProject({ project: project, index: i})"
-    (deleteClicked)="deleteProject({project: project, index: i})"
-    (markAsClicked)="markProjectAs({project: project, index: i}, $event)"></app-scheduler-project>
-  <button color="accent" mat-fab (click)="editProject()">+</button>
+<ng-container *ngIf="isUserLoggedIn">
+  <div *ngIf="isInitialized" class="projects-container">
+    <app-scheduler-project
+      *ngFor="let project of projects; let i = index"
+      [schedulerProject]="project"
+      (editClicked)="editProject({ project: project, index: i})"
+      (deleteClicked)="deleteProject({project: project, index: i})"
+      (markAsClicked)="markProjectAs({project: project, index: i}, $event)"></app-scheduler-project>
+    <button color="accent" mat-fab (click)="editProject()">+</button>
+  </div>
 </ng-container>
+<app-project-card [data]="schedulerIntro" [signInEnabled]="true" *ngIf="!isUserLoggedIn"></app-project-card>

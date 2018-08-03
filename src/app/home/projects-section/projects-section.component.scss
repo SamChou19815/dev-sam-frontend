@@ -2,7 +2,7 @@
 
 $blue-gray: mat-color(mat-palette($mat-blue-gray, 500));
 
-:host, app-home-project-card {
+:host, app-project-card {
   background-color: $blue-gray;
 }
 

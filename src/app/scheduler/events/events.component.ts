@@ -5,6 +5,8 @@ import { shortDelay } from '../../shared/util';
 import { SchedulerDataService } from '../scheduler-data.service';
 import { SchedulerEvent, SchedulerEvents, SchedulerEventWithIndex } from '../scheduler-event';
 import { EditorDialogComponent } from './editor-dialog/editor-dialog.component';
+import { ProjectCardData, schedulerCardData } from '../../shared/project-card-data';
+import { GoogleUserService } from '../../shared/google-user.service';
 
 @Component({
   selector: 'app-scheduler-events',
@@ -13,14 +15,31 @@ import { EditorDialogComponent } from './editor-dialog/editor-dialog.component';
 })
 export class EventsComponent implements OnInit {
 
+  /**
+   * The intro for Scheduler.
+   * @type {ProjectCardData}
+   */
+  schedulerIntro: ProjectCardData = schedulerCardData;
+  /**
+   * Whether the user has logged in.
+   * @type {boolean}
+   */
+  isUserLoggedIn = false;
+
   constructor(private dataService: SchedulerDataService,
+              private googleUserService: GoogleUserService,
               private loadingService: LoadingOverlayService,
               private dialog: MatDialog) {
   }
 
   ngOnInit() {
-    shortDelay(() => {
+    shortDelay(async () => {
       const ref = this.loadingService.open();
+      this.isUserLoggedIn = await this.googleUserService.isSignedInPromise();
+      if (!this.isUserLoggedIn) {
+        ref.close();
+        return;
+      }
       this.dataService.initializedSchedulerApp().then(ref.close);
     });
   }
