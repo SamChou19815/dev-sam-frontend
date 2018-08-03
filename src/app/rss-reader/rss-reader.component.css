@@ -44,3 +44,7 @@ mat-list-item.load-more-disabled {
 mat-card {
   width: 90%;
 }
+
+:host /deep/ img {
+  max-width: 100% !important;
+}
