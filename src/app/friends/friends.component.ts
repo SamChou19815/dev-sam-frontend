@@ -7,6 +7,7 @@ import { asyncRun, shortDelay } from '../shared/util';
 import { FriendData } from './friend-data';
 import { FriendsDataService } from './friends-data.service';
 import { FriendsNetworkService } from './friends-network.service';
+import { GoogleUserService } from '../shared/google-user.service';
 
 @Component({
   selector: 'app-friends',
@@ -15,6 +16,11 @@ import { FriendsNetworkService } from './friends-network.service';
 })
 export class FriendsComponent implements OnInit {
 
+  /**
+   * Whether the user has logged in.
+   * @type {boolean}
+   */
+  isUserLoggedIn = false;
   /**
    * The input value of email to search for a user.
    * @type {string}
@@ -27,15 +33,28 @@ export class FriendsComponent implements OnInit {
 
   constructor(private networkService: FriendsNetworkService,
               private dataService: FriendsDataService,
+              private googleUserService: GoogleUserService,
               private loadingService: LoadingOverlayService,
               private dialog: MatDialog) {
   }
 
   ngOnInit() {
-    shortDelay(() => {
+    shortDelay(async () => {
       const ref = this.loadingService.open();
+      this.isUserLoggedIn = await this.googleUserService.isSignedInPromise();
+      if (!this.isUserLoggedIn) {
+        ref.close();
+        return;
+      }
       this.dataService.initializedFriendsApp().then(ref.close);
     });
+  }
+
+  /**
+   * Let the user sign in.
+   */
+  signIn(): void {
+    this.googleUserService.signIn();
   }
 
   /**
