@@ -1,15 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { User } from 'firebase';
-import * as firebase from 'firebase/app';
+import { User, auth } from 'firebase';
 import { ignore } from './util';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GoogleUserService {
 
-  constructor(private angularFireAuth: AngularFireAuth) {
+  /**
+   * Whether we are on browser platform.
+   */
+  private readonly isOnBrowser: boolean;
+
+  constructor(private angularFireAuth: AngularFireAuth,
+              @Inject(PLATFORM_ID) private platformId: Object) {
+    this.isOnBrowser = isPlatformBrowser(platformId);
   }
 
   /**
@@ -18,6 +25,9 @@ export class GoogleUserService {
    * @return {Promise<User | null>>} the promise of a user from Firebase.
    */
   private userPromise(): Promise<User | null> {
+    if (!this.isOnBrowser) {
+      return Promise.resolve(null);
+    }
     return new Promise((resolve, reject) =>
       this.angularFireAuth.auth.onAuthStateChanged(resolve, reject)
     );
@@ -36,7 +46,7 @@ export class GoogleUserService {
    * Let the user sign in.
    */
   signIn(): void {
-    this.angularFireAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider()).then(ignore);
+    this.angularFireAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider()).then(ignore);
   }
 
   /**
@@ -48,7 +58,7 @@ export class GoogleUserService {
     const userOpt = await this.userPromise();
     if (userOpt == null) {
       try {
-        await this.angularFireAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+        await this.angularFireAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider());
       } catch (e) {
       }
       return this.afterSignedIn();

@@ -49,7 +49,7 @@ export class SideNavPageComponent implements OnInit, AfterViewInit {
               private navDataService: NavDataService,
               private changeDetector: ChangeDetectorRef,
               private router: Router,
-              @Inject(PLATFORM_ID) private platformId: Object) {
+              @Inject(PLATFORM_ID) platformId: Object) {
     this.title = this.navDataList.list[0].name;
     this.isOnBrowser = isPlatformBrowser(platformId);
   }
