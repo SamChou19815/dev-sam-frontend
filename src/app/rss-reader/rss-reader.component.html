@@ -3,9 +3,9 @@
     <!-- All Items View -->
     <ng-container *ngIf="!hasSelectedItem">
       <mat-toolbar>
-      <span class="toolbar-title">
-        {{doesShowAllArticles ? 'All Articles' : 'Starred Articles'}}
-      </span>
+        <span class="toolbar-title">
+          {{doesShowAllArticles ? 'All Articles' : 'Starred Articles'}}
+        </span>
         <button mat-button color="primary" (click)="doesShowAllArticles = !doesShowAllArticles">
           {{doesShowAllArticles ? 'Starred' : 'All' }}
         </button>

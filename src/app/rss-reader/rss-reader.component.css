@@ -45,6 +45,6 @@ mat-card {
   width: 90%;
 }
 
-:host /deep/ img {
+div /deep/ img {
   max-width: 100% !important;
 }
