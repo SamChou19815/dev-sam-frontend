@@ -5,6 +5,8 @@ import { LoadingOverlayService } from '../../shared/overlay/loading-overlay.serv
 import { asyncRun, shortDelay } from '../../shared/util';
 import { Feed } from '../rss-reader-data';
 import { RssReaderDataService } from '../rss-reader-data.service';
+import { GoogleUserService } from '../../shared/google-user.service';
+import { ProjectCardData, rssReaderCardData } from '../../shared/project-card-data';
 
 @Component({
   selector: 'app-rss-reader-subscriptions',
@@ -14,19 +16,35 @@ import { RssReaderDataService } from '../rss-reader-data.service';
 export class SubscriptionsComponent implements OnInit {
 
   /**
+   * The intro for RSS Reader.
+   * @type {ProjectCardData}
+   */
+  readonly rssReaderIntro: ProjectCardData = rssReaderCardData;
+  /**
+   * Whether the user has logged in.
+   * @type {boolean}
+   */
+  isUserLoggedIn = false;
+  /**
    * The input for RSS Feed URL.
    * @type {string}
    */
   rssFeedUrlInput = '';
 
   constructor(private dataService: RssReaderDataService,
+              private googleUserService: GoogleUserService,
               private loadingService: LoadingOverlayService,
               private dialog: MatDialog) {
   }
 
   ngOnInit() {
-    shortDelay(() => {
+    shortDelay(async () => {
       const ref = this.loadingService.open();
+      this.isUserLoggedIn = await this.googleUserService.isSignedInPromise();
+      if (!this.isUserLoggedIn) {
+        ref.close();
+        return;
+      }
       this.dataService.initializeRssReaderApp().then(ref.close);
     });
   }

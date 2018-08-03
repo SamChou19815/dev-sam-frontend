@@ -7,6 +7,7 @@ import { asyncRun, shortDelay } from '../shared/util';
 import { AddArticleDialogComponent } from './add-article-dialog/add-article-dialog.component';
 import { AnalyzedArticle, RawArticle } from './chunk-reader-data';
 import { ChunkReaderNetworkService } from './chunk-reader-network.service';
+import { chunkReaderCardData, ProjectCardData, schedulerCardData } from '../shared/project-card-data';
 
 @Component({
   selector: 'app-chunk-reader',
@@ -15,6 +16,16 @@ import { ChunkReaderNetworkService } from './chunk-reader-network.service';
 })
 export class ChunkReaderComponent implements OnInit {
 
+  /**
+   * The intro for Chunk Reader.
+   * @type {ProjectCardData}
+   */
+  chunkReaderIntro: ProjectCardData = chunkReaderCardData;
+  /**
+   * Whether the user has logged in.
+   * @type {boolean}
+   */
+  isUserLoggedIn = false;
   /**
    * A list of articles.
    * @type {AnalyzedArticle[]}
@@ -38,6 +49,11 @@ export class ChunkReaderComponent implements OnInit {
   ngOnInit() {
     shortDelay(async () => {
       const ref = this.loadingService.open();
+      this.isUserLoggedIn = await this.googleUserService.isSignedInPromise();
+      if (!this.isUserLoggedIn) {
+        ref.close();
+        return;
+      }
       this.networkService.firebaseAuthToken = await this.googleUserService.afterSignedIn();
       this.articles = await this.networkService.loadArticles();
       ref.close();

@@ -19,7 +19,7 @@ export class ProjectsComponent implements OnInit {
    * The intro for Scheduler.
    * @type {ProjectCardData}
    */
-  schedulerIntro: ProjectCardData = schedulerCardData;
+  readonly schedulerIntro: ProjectCardData = schedulerCardData;
   /**
    * Whether the user has logged in.
    * @type {boolean}

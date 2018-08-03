@@ -3,6 +3,8 @@ import { LoadingOverlayService } from '../shared/overlay/loading-overlay.service
 import { shortDelay } from '../shared/util';
 import { RssReaderData, UserFeedItem } from './rss-reader-data';
 import { RssReaderDataService } from './rss-reader-data.service';
+import { ProjectCardData, rssReaderCardData, schedulerCardData } from '../shared/project-card-data';
+import { GoogleUserService } from '../shared/google-user.service';
 
 @Component({
   selector: 'app-rss-reader',
@@ -11,6 +13,16 @@ import { RssReaderDataService } from './rss-reader-data.service';
 })
 export class RssReaderComponent implements OnInit {
 
+  /**
+   * The intro for RSS Reader.
+   * @type {ProjectCardData}
+   */
+  readonly rssReaderIntro: ProjectCardData = rssReaderCardData;
+  /**
+   * Whether the user has logged in.
+   * @type {boolean}
+   */
+  isUserLoggedIn = false;
   /**
    * Selected item is the current article selected by the user and its index, which can
    * be null to indicate that the user is not reading any one now.
@@ -29,12 +41,18 @@ export class RssReaderComponent implements OnInit {
   doesShowAllArticles = true;
 
   constructor(private dataService: RssReaderDataService,
+              private googleUserService: GoogleUserService,
               private loadingService: LoadingOverlayService) {
   }
 
   ngOnInit() {
-    shortDelay(() => {
+    shortDelay(async () => {
       const ref = this.loadingService.open();
+      this.isUserLoggedIn = await this.googleUserService.isSignedInPromise();
+      if (!this.isUserLoggedIn) {
+        ref.close();
+        return;
+      }
       this.dataService.initializeRssReaderApp().then(ref.close);
     });
   }
