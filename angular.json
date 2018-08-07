@@ -55,6 +55,12 @@
             "outputPath": "dist/server",
             "main": "src/main.server.ts",
             "tsConfig": "src/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "sourceMap": false,
+              "progress": false
+            }
           }
         },
         "serve": {

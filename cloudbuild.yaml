@@ -6,12 +6,7 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/frontend-container:${_APP_VERSION}']
   timeout: 300s
 - name: 'gcr.io/cloud-builders/kubectl'
-  args:
-  - set
-  - image
-  - deployment
-  - frontend-workload
-  - web=gcr.io/$PROJECT_ID/frontend-container:${_APP_VERSION}
+  args: ['set', 'image', 'deployment', 'frontend-workload', '*=gcr.io/$PROJECT_ID/frontend-container:${_APP_VERSION}']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=web-cluster'

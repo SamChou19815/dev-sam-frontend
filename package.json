@@ -5,11 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build --prod --build-optimizer --source-map=false",
+    "build": "ng build --prod --build-optimizer --progress=false --source-map=false",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "serve:ssr": "node dist/server",
-    "build:client-and-server-bundles": "ng build --prod && ng run dev-sam-frontend:server",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "build:client-and-server-bundles": "npm run build && ng run dev-sam-frontend:server --progress=false",
+    "webpack:server": "webpack --config webpack.server.config.js --progress=false --colors",
     "test": "ng test",
     "lint": "ng lint"
   },
