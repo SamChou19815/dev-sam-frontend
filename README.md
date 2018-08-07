@@ -1,6 +1,5 @@
 # Developer Sam Website Frontend
 
-![CircleCI branch](https://img.shields.io/circleci/project/github/SamChou19815/dev-sam-frontend/master.svg)
 ![GitHub](https://img.shields.io/github/license/SamChou19815/dev-sam-frontend.svg)
 
 The code of my own website frontend that is open-sourced.

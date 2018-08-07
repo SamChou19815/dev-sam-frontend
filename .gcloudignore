@@ -1,7 +1,4 @@
 node_modules
-e2e
-src
-.circleci
 .DS_Store
 .firebaserc
 .editorconfig

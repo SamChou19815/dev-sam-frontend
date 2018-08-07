@@ -1,7 +1,4 @@
 node_modules
-e2e
-src
-.circleci
 Dockerfile
 .DS_Store
 .firebaserc
