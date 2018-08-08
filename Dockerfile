@@ -25,6 +25,7 @@ FROM node:8-alpine
 
 # Copy from builder.
 COPY --from=builder /ng-app/dist /dist
+COPY --from=builder /ng-app/package.json ./package.json
 
 EXPOSE 4000
 
