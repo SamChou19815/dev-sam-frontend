@@ -21,6 +21,11 @@ export class OpenSourceSectionComponent implements OnInit {
       name: 'TypedStore', logo: '/assets/app-icons/kinetics.png',
       intro: 'An opinionated library to quickly bootstrap your backend on GCP.',
       link: 'https://github.com/SamChou19815/kinetics'
+    },
+    <OpenSourceData>{
+      name: 'Badges for GCP Cloud Build', logo: '/assets/app-icons/badges-4-gcp-cloud-build.png',
+      intro: 'Automatically generating badges for build status on GCP Cloud Build.',
+      link: 'https://github.com/SamChou19815/TODO'
     }
   ];
 
