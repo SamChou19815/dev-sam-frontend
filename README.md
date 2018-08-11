@@ -1,6 +1,6 @@
 # Developer Sam Website Frontend
 
-![Build Status](https://firebasestorage.googleapis.com/v0/b/dev-sam.appspot.com/o/cloud-build-github-badges%2Fb%2Fgithub-samchou19815-dev-sam-frontend%2Fmaster.svg?alt=media&token=77903aaa-eb82-41d7-8031-d6629795e2f2)
+![Build Status](https://firebasestorage.googleapis.com/v0/b/dev-sam.appspot.com/o/badges-4-cloud-build%2Fb%2Fgithub-samchou19815-dev-sam-frontend-master.svg?alt=media)
 ![GitHub](https://img.shields.io/github/license/SamChou19815/dev-sam-frontend.svg)
 
 The code of my own website frontend that is open-sourced.
