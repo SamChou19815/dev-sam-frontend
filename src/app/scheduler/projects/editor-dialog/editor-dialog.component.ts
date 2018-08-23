@@ -16,6 +16,11 @@ export class EditorDialogComponent implements OnInit {
    * @type {number[]}
    */
   readonly possibleHours: number[] = possibleHoursArray;
+  /**
+   * Whether to show advanced configs.
+   * @type {boolean}
+   */
+  doesShowAdvanced = false;
 
   /**
    * Key of the project.
