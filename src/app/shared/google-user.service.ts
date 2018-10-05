@@ -1,8 +1,8 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { User, auth } from 'firebase';
 import { ignore } from './util';
 import { isPlatformBrowser } from '@angular/common';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'

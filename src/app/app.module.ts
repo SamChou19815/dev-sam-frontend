@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +15,8 @@ import { TechSpecsSectionComponent } from './home/tech-specs-section/tech-specs-
 import { OpenSourceSectionComponent } from './home/open-source-section/open-source-section.component';
 import { OpenSourceCardComponent } from './home/open-source-section/open-source-card/open-source-card.component';
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
