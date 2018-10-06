@@ -4,6 +4,9 @@
 # Exclude node_modules
 node_modules
 
+# Lock
+package-lock.json
+
 # Exclude IDEA files
 **/.idea/*
 *.iml
