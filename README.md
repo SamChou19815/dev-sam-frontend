@@ -5,7 +5,7 @@
 
 The code of my own website frontend that is open-sourced.
 
-This is the repository for the frontend of [my website](https://developersam.com), built by Angular 6. You can freely 
+This is the repository for the frontend of [my website](https://developersam.com), built by Angular 7. You can freely 
 use any part of my code while sticking to the MIT license. A recommended approach is first copy the 
 [shared folder](./src/app/shared) to your initialized Angular app and delete those unnecessary components according to 
 your need.
@@ -14,7 +14,7 @@ your need.
 
 It is impossible for this website to run without:
 
-- [Angular 6 (MIT)](https://github.com/angular/angular)
+- [Angular 7 (MIT)](https://github.com/angular/angular)
 - [Angular Material (MIT)](https://github.com/angular/material2)
 - [Angular Font Awesome (MIT)](https://github.com/baruchvlz/angular-font-awesome)
 
