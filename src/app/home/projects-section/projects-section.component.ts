@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  chunkReaderCardData, moreProjectsCardData,
+  chunkReaderCardData,
   ProjectCardData,
-  rssReaderCardData,
   samplCardData,
   schedulerCardData, tenCardData
 } from '../../shared/project-card-data';
@@ -18,9 +17,7 @@ export class ProjectsSectionComponent implements OnInit {
    * A list of projects to display.
    * @type {ProjectCardData[]}
    */
-  readonly projects: ProjectCardData[] = [
-    schedulerCardData, rssReaderCardData, samplCardData, chunkReaderCardData, tenCardData, moreProjectsCardData
-  ];
+  readonly projects: ProjectCardData[] = [schedulerCardData, samplCardData, chunkReaderCardData, tenCardData];
 
   constructor() { }
 

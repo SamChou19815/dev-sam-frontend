@@ -17,10 +17,6 @@ const routes: Routes = [
     loadChildren: 'app/scheduler/scheduler.module#SchedulerModule'
   },
   {
-    path: 'rss-reader',
-    loadChildren: 'app/rss-reader/rss-reader.module#RssReaderModule'
-  },
-  {
     path: 'playground/sampl',
     loadChildren: 'app/sampl/sampl.module#SamplModule'
   },

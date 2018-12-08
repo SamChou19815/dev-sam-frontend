@@ -30,23 +30,6 @@ export class NavDataService {
     ]
   };
   /**
-   * Group for RSS Reader.
-   * @type {NavGroup}
-   */
-  private readonly rssReaderGroup: NavGroup = <NavGroup>{
-    name: 'RSS Reader', icon: Icon.ofMaterial('chrome_reader_mode'),
-    children: [
-      {
-        name: 'Articles', icon: Icon.ofMaterial('library_books'),
-        link: '/rss-reader/articles'
-      },
-      {
-        name: 'Subscriptions', icon: Icon.ofMaterial('rss_feed'),
-        link: '/rss-reader/subscriptions'
-      },
-    ]
-  };
-  /**
    * The group for playground
    * @type {NavGroup}
    */
@@ -72,7 +55,7 @@ export class NavDataService {
    * @type {NavDataList}
    */
   readonly navDataList: NavDataList = new NavDataList(<NavGroup[]>[
-    this.schedulerNavGroup, this.rssReaderGroup, this.playgroundGroup
+    this.schedulerNavGroup, this.playgroundGroup
   ]);
 
   constructor() {
