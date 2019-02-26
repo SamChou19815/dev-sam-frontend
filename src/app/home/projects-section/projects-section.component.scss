@@ -10,7 +10,7 @@ $blue-gray: mat-color(mat-palette($mat-blue-gray, 500));
   :host {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 320px 320px 320px 320px;
+    grid-template-columns: 400px 400px 400px;
     justify-content: center;
   }
 }
@@ -19,7 +19,7 @@ $blue-gray: mat-color(mat-palette($mat-blue-gray, 500));
   :host {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 400px 400px;
+    grid-template-columns: 330px 330px 330px;
     justify-content: center;
   }
 }
@@ -28,7 +28,7 @@ $blue-gray: mat-color(mat-palette($mat-blue-gray, 500));
   :host {
     display: grid;
     grid-gap: 1em;
-    grid-template-columns: 350px 350px;
+    grid-template-columns: 280px 280px 280px;
     justify-content: center;
   }
 }

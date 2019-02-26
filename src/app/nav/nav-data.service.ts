@@ -35,20 +35,7 @@ export class NavDataService {
    */
   private readonly playgroundGroup: NavGroup = <NavGroup>{
     name: 'Playground', icon: Icon.ofMaterial('apps'),
-    children: [
-      <NavItem>{
-        name: 'SAMPL', icon: Icon.ofMaterial('memory'),
-        link: '/playground/sampl'
-      },
-      <NavItem>{
-        name: 'Chunk Reader', icon: Icon.ofMaterial('speaker_notes'),
-        link: '/playground/chunk-reader'
-      },
-      <NavItem>{
-        name: 'TEN', icon: Icon.ofMaterial('grid_on'),
-        link: '/playground/ten'
-      }
-    ]
+    children: [<NavItem>{ name: 'SAMPL', icon: Icon.ofMaterial('memory'), link: '/playground/sampl' }]
   };
   /**
    * The nav data list for display.

@@ -48,15 +48,6 @@ export const schedulerCardData = <ProjectCardData>{
 };
 
 /**
- * Card data for RSS Reader.
- * @type {ProjectCardData}
- */
-export const rssReaderCardData = <ProjectCardData>{
-  name: 'RSS Reader', logo: '/assets/app-icons/rss-reader.png', routerLink: '/rss-reader',
-  intro: 'Reader for subscribed RSS feeds. Source of my potential ML data.'
-};
-
-/**
  * Card data for SAMPL.
  * @type {ProjectCardData}
  */
@@ -67,31 +58,11 @@ export const samplCardData = <ProjectCardData>{
 };
 
 /**
- * Card data for Chunk Reader.
- * @type {ProjectCardData}
- */
-export const chunkReaderCardData = <ProjectCardData>{
-  name: 'Chunk Reader', logo: '/assets/app-icons/chunk-reader.png',
-  routerLink: '/playground/chunk-reader',
-  intro: 'Hackathon-winning service to extract key information and summary from text.'
-};
-
-/**
  * Card data for TEN.
  * @type {ProjectCardData}
  */
 export const tenCardData = <ProjectCardData>{
-  name: 'TEN', logo: '/assets/app-icons/ten.png', routerLink: '/playground/ten',
-  externalResource: { prompt: 'GitHub Repo', link: 'https://github.com/SamChou19815/ten' },
+  name: 'TEN', logo: '/assets/app-icons/ten.png',
+  externalResource: { prompt: 'External Link', link: 'https://ten.developersam.com' },
   intro: 'Interesting game with simple rules. Powered by an MCTS AI.'
-};
-
-/**
- * Card data for more projects.
- * @type {ProjectCardData}
- */
-export const moreProjectsCardData = <ProjectCardData>{
-  name: 'More Projects', logo: '/assets/app-icons/more-projects.png',
-  externalResource: { prompt: 'See Them All', link: 'https://github.com/SamChou19815' },
-  intro: 'Other open source projects that are not hosted on this website.'
 };

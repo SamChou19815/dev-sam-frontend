@@ -21,14 +21,6 @@ const routes: Routes = [
     loadChildren: 'app/sampl/sampl.module#SamplModule'
   },
   {
-    path: 'playground/chunk-reader',
-    loadChildren: 'app/chunk-reader/chunk-reader.module#ChunkReaderModule'
-  },
-  {
-    path: 'playground/ten',
-    loadChildren: 'app/ten/ten.module#TenModule'
-  },
-  {
     path: '**',
     component: NotFoundComponent
   }
