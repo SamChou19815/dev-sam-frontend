@@ -30,22 +30,11 @@ export class NavDataService {
     ]
   };
   /**
-   * The group for playground
-   * @type {NavGroup}
-   */
-  private readonly playgroundGroup: NavGroup = <NavGroup>{
-    name: 'Playground', icon: Icon.ofMaterial('apps'),
-    children: [<NavItem>{ name: 'SAMPL', icon: Icon.ofMaterial('memory'), link: '/playground/sampl' }]
-  };
-  /**
    * The nav data list for display.
    * @type {NavDataList}
    */
-  readonly navDataList: NavDataList = new NavDataList(<NavGroup[]>[
-    this.schedulerNavGroup, this.playgroundGroup
-  ]);
+  readonly navDataList: NavDataList = new NavDataList(<NavGroup[]>[this.schedulerNavGroup]);
 
-  constructor() {
-  }
+  constructor() {}
 
 }

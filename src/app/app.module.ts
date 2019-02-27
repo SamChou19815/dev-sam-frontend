@@ -12,8 +12,6 @@ import { NavModule } from './nav/nav.module';
 import { SharedModule } from './shared/shared.module';
 import { ProjectsSectionComponent } from './home/projects-section/projects-section.component';
 import { TechSpecsSectionComponent } from './home/tech-specs-section/tech-specs-section.component';
-import { OpenSourceSectionComponent } from './home/open-source-section/open-source-section.component';
-import { OpenSourceCardComponent } from './home/open-source-section/open-source-card/open-source-card.component';
 import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
@@ -26,8 +24,6 @@ import { AngularFireModule } from '@angular/fire';
     AboutMeSectionComponent,
     ProjectsSectionComponent,
     TechSpecsSectionComponent,
-    OpenSourceSectionComponent,
-    OpenSourceCardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'dev-sam-frontend' }), NavModule, BrowserAnimationsModule,

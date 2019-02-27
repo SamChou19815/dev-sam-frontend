@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   ProjectCardData,
-  samplCardData,
+  samlangCardData,
   schedulerCardData,
   tenCardData
 } from '../../shared/project-card-data';
@@ -17,7 +17,7 @@ export class ProjectsSectionComponent implements OnInit {
    * A list of projects to display.
    * @type {ProjectCardData[]}
    */
-  readonly projects: ProjectCardData[] = [schedulerCardData, samplCardData, tenCardData];
+  readonly projects: ProjectCardData[] = [schedulerCardData, samlangCardData, tenCardData];
 
   constructor() { }
 

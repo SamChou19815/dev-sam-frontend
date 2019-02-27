@@ -48,13 +48,13 @@ export const schedulerCardData = <ProjectCardData>{
 };
 
 /**
- * Card data for SAMPL.
+ * Card data for SAMLANG.
  * @type {ProjectCardData}
  */
-export const samplCardData = <ProjectCardData>{
-  name: 'SAMPL', logo: '/assets/app-icons/sampl.png', routerLink: '/playground/sampl',
-  externalResource: { prompt: 'GitHub Repo', link: 'https://github.com/SamChou19815/sampl' },
-  intro: 'Statically-typed functional programming language with basic type inference.'
+export const samlangCardData = <ProjectCardData>{
+  name: 'SAMLANG', logo: 'https://samlang.developersam.com/img/samlang.svg',
+  externalResource: { prompt: 'Official Site', link: 'https://samlang.developersam.com' },
+  intro: 'Statically-typed functional programming language with full type inference.'
 };
 
 /**

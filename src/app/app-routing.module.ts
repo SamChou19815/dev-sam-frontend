@@ -17,10 +17,6 @@ const routes: Routes = [
     loadChildren: 'app/scheduler/scheduler.module#SchedulerModule'
   },
   {
-    path: 'playground/sampl',
-    loadChildren: 'app/sampl/sampl.module#SamplModule'
-  },
-  {
     path: '**',
     component: NotFoundComponent
   }
