@@ -1,14 +1,15 @@
 # Developer Sam Website Frontend
 
+![Status](https://img.shields.io/badge/status-deprecated-red.svg)
 ![Build Status](https://firebasestorage.googleapis.com/v0/b/dev-sam.appspot.com/o/badges-4-cloud-build%2Fb%2Fgithub-samchou19815-dev-sam-frontend-master.svg?alt=media)
 ![GitHub](https://img.shields.io/github/license/SamChou19815/dev-sam-frontend.svg)
+
+This repository is no longer actively maintained.
 
 The code of my own website frontend that is open-sourced.
 
 This is the repository for the frontend of [my website](https://developersam.com), built by Angular 7. You can freely 
-use any part of my code while sticking to the MIT license. A recommended approach is first copy the 
-[shared folder](./src/app/shared) to your initialized Angular app and delete those unnecessary components according to 
-your need.
+use any part of my code while sticking to the MIT license.
 
 # Open Source Acknowledgement
 
